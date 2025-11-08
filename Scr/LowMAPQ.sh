@@ -18,7 +18,7 @@ fi
 
 cd $BaseDir/MapDdp
 
-if [[ $HybridZero !=  "-" ]]; then
+if [[ $HybridZero !=  "-" ]]; then  # this if statement does not handle the condition HybridZero="skip"
   H0Label=$(echo $HybridZero | cut -d" " -f1)
   H0Sample=$(ls $H0Label*bam | grep "+")
   samtools view -b -q 5 $H0Sample > Appoggio.bam
